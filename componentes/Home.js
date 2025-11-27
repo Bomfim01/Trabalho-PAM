@@ -7,32 +7,28 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Loja Tech</Text>
+      <Text style={styles.titulo}>Minha Biblioteca</Text>
       
-      <Text style={styles.subtitulo}>
-        Bem-vindo à nossa loja de eletrônicos!
-      </Text>
-
       <View style={styles.botoesContainer}>
         <TouchableOpacity 
           style={styles.botao}
-          onPress={() => navigation.navigate('Produtos')}
+          onPress={() => navigation.navigate('Livros')}
         >
-          <Text style={styles.botaoTexto}>Ver Produtos</Text>
+          <Text style={styles.botaoTexto}>Ver Livros</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
           style={styles.botao}
-          onPress={() => navigation.navigate('Carrinho')}
+          onPress={() => navigation.navigate('Adicionar')}
         >
-          <Text style={styles.botaoTexto}>Meu Carrinho</Text>
+          <Text style={styles.botaoTexto}>Adicionar Livro</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
           style={styles.botao}
-          onPress={() => navigation.navigate('Contato')}
+          onPress={() => navigation.navigate('Favoritos')}
         >
-          <Text style={styles.botaoTexto}>Fale Conosco</Text>
+          <Text style={styles.botaoTexto}>Favoritos</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -49,15 +45,9 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 32,
     fontWeight: 'bold',
-    marginBottom: 10,
-    textAlign: 'center',
-    color: '#2c3e50',
-  },
-  subtitulo: {
-    fontSize: 16,
     marginBottom: 40,
     textAlign: 'center',
-    color: '#7f8c8d',
+    color: '#2c3e50',
   },
   botoesContainer: {
     alignItems: 'center',
@@ -67,13 +57,8 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 8,  
     marginVertical: 8,
-    width: '20%',
+    width: '60%',
     alignItems: 'center',
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
   },
   botaoTexto: {
     color: 'white',

@@ -1,22 +1,22 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './componentes/Home';
-import Produtos from './componentes/Produto';
-import Carrinho from './componentes/Carrinho';
-import Contato from './componentes/Contato';
+import Books from './componentes/Livros';
+import Favorites from './componentes/Favoritos';
+import AddBook from './componentes/AddLivros';
 
 const Stack = createNativeStackNavigator();
-const Drawer = createDrawerNavigator();
+const Tab = createBottomTabNavigator();
 
-function DrawerNavigator() {
+function TabNavigator() {
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Início" component={Home} />
-      <Drawer.Screen name="Produtos" component={Produtos} />
-      <Drawer.Screen name="Carrinho" component={Carrinho} />
-      <Drawer.Screen name="Contato" component={Contato} />
-    </Drawer.Navigator>
+    <Tab.Navigator>
+      <Tab.Screen name="Início" component={Home} />
+      <Tab.Screen name="Livros" component={Books} />
+      <Tab.Screen name="Adicionar" component={AddBook} />
+      <Tab.Screen name="Favoritos" component={Favorites} />
+    </Tab.Navigator>
   );
 }
 
@@ -25,8 +25,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen 
-          name="Drawer" 
-          component={DrawerNavigator} 
+          name="MainTabs" 
+          component={TabNavigator} 
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
